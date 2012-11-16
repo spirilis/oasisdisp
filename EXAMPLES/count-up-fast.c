@@ -30,7 +30,6 @@ int main()
 
 	oasisdisp_init(&P1OUT, BIT1, 7);
 
-	oasisdisp_print_int(&P1OUT, BIT1, 12000);
 	for (ctr=0; ctr < 65535; ctr++) {
 		oasisdisp_print_uint(&P1OUT, BIT1, ctr);
 		__delay_cycles(8000);

@@ -8,8 +8,6 @@
 
 int main()
 {
-	unsigned int ctr = 0;
-
 	WDTCTL = WDTPW | WDTHOLD;
 	DCOCTL = CALDCO_16MHZ;
 	BCSCTL1 = CALBC1_16MHZ;
@@ -30,11 +28,7 @@ int main()
 
 	oasisdisp_init(&P1OUT, BIT1, 7);
 
-	oasisdisp_print_int(&P1OUT, BIT1, 12000);
-	for (ctr=0; ctr < 65535; ctr++) {
-		oasisdisp_print_uint(&P1OUT, BIT1, ctr);
-		__delay_cycles(2000);
-	}
+	oasisdisp_print_int(&P1OUT, BIT1, 9999);
 
 	LPM4;
 	return 0;
